@@ -8,10 +8,6 @@ parts:
         source: https://github.com/wmww/snapcraft-preload.git
         source-branch: anon-shm
         plugin: cmake
-        build-packages:
-          - on amd64:
-            - gcc-multilib
-            - g++-multilib
 ```
 
 And precede your `apps` entry like this:
