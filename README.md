@@ -1,12 +1,13 @@
-# Use
+`shm_open()` often doesn't play nice with snaps, this library (similar to [snapcraft-preload](https://github.com/sergiusens/snapcraft-preload)) overrides `shm_open()` using `memfd_create()` to make a shared memory fd without an associated file path.
+
+# To use
 
 Add this as a part to your `snapcraft.yaml`:
 
 ```yaml
 parts:
     anon-shm-preload:
-        source: https://github.com/wmww/snapcraft-preload.git
-        source-branch: anon-shm
+        source: https://github.com/MirServer/anon-shm-preload.git
         plugin: cmake
 ```
 
