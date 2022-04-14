@@ -1,5 +1,5 @@
 #!/bin/sh
 
-export LD_PRELOAD="$SNAP/@LIBPATH@/@LIBNAME@.so:$LD_PRELOAD"
+export LD_PRELOAD="$SNAP/@LIBPATH@/@LIBNAME@.so${LD_PRELOAD:+:$LD_PRELOAD}"
 
 exec "$@"
