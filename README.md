@@ -11,12 +11,15 @@ parts:
         plugin: cmake
 ```
 
-And precede your `apps` entry like this:
+And append to your `apps.command-chain` entry like this:
 
 ```yaml
 apps:
     app-name:
-        command: bin/anon-shm-preload $SNAP/<binary>
+      command-chain:
+        // ...
+        - bin/anon-shm-preload
+    command: <app-binary>
 ```
 
 If you're using the `desktop-launch` launcher from the [ubuntu/snapcraft-desktop-helpers](https://github.com/ubuntu/snapcraft-desktop-helpers), place `anon-shm-preload` _after_ `desktop-launch` in the app command.
